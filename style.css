@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.verification-box {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header i {
+    font-size: 40px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.header h2 {
+    color: #333;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #eee;
+    margin: 20px 0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+.email-info {
+    color: #666;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.email-info strong {
+    color: #333;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: #4CAF50;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.edit-btn:hover {
+    transform: scale(1.1);
+}
+
+.code-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.code {
+    width: 60px;
+    height: 70px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 35px;
+    text-align: center;
+    transition: all 0.3s;
+    background: #f9f9f9;
+    caret-color: transparent;
+}
+
+.code:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    background: #fff;
+}
+
+.code:valid {
+    border-color: #4CAF50;
+    background: #fff;
+}
+
+.actions {
+    margin: 30px 0;
+}
+
+.verify-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.verify-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.verify-btn:not(:disabled):hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.timer {
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.resend-btn, .help-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.resend-btn:not(:disabled):hover, .help-btn:hover {
+    color: #333;
+}
+
+.resend-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cancel-btn, .save-btn, .close-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+.cancel-btn {
+    background: #eee;
+    color: #666;
+}
+
+.save-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.help-list {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.help-list li {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .verification-box {
+        padding: 20px;
+    }
+    
+    .code {
+        width: 45px;
+        height: 55px;
+        font-size: 28px;
+    }
+    
+    .verify-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

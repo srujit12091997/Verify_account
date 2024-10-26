@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Account Verification</title>
+</head>
+<body>
+    <div class="container">
+        <div class="verification-box">
+            <div class="header">
+                <i class="fas fa-shield-alt"></i>
+                <h2>Verify Your Account</h2>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <p class="email-info">
+                We sent a verification code to<br/>
+                <strong id="email">cool_guy@email.com</strong>
+                <button id="editEmail" class="edit-btn">
+                    <i class="fas fa-pen"></i>
+                </button>
+            </p>
+            <div class="code-container">
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            </div>
+            <div class="actions">
+                <button id="verifyBtn" class="verify-btn" disabled>
+                    Verify Code
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="timer">
+                    Code expires in: <span id="countdown">05:00</span>
+                </div>
+            </div>
+            <div class="footer">
+                <button id="resendBtn" class="resend-btn" disabled>
+                    <i class="fas fa-redo"></i> Resend Code
+                </button>
+                <button id="needHelpBtn" class="help-btn">
+                    Need Help?
+                </button>
+            </div>
+        </div>
+        
+        <!-- Modal for editing email -->
+        <div id="emailModal" class="modal">
+            <div class="modal-content">
+                <h3>Update Email Address</h3>
+                <input type="email" id="newEmail" placeholder="Enter new email">
+                <div class="modal-buttons">
+                    <button id="cancelEmail" class="cancel-btn">Cancel</button>
+                    <button id="saveEmail" class="save-btn">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="helpModal" class="modal">
+            <div class="modal-content">
+                <h3>Need Help?</h3>
+                <ul class="help-list">
+                    <li>Check your spam folder</li>
+                    <li>Make sure the email address is correct</li>
+                    <li>Try requesting a new code</li>
+                    <li>Contact support if issues persist</li>
+                </ul>
+                <button id="closeHelp" class="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
